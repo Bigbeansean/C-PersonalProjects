@@ -19,7 +19,7 @@ namespace MathQuiz
 
         static void Main(string[] args)
         {
-            while(Addition() == true)
+            while(Divide() == true)
             {
                 victoryWord = rnd.Next(0, victoryWords.Length);
                 Console.WriteLine(victoryWords[victoryWord]);
@@ -57,7 +57,68 @@ namespace MathQuiz
             int left = rnd.Next(1, 9);
             int right = rnd.Next(1, 9);
 
-            Console.WriteLine(left + " * " + right);
+            Console.WriteLine("{0} + {1}", left, right);
+            int answer = left + right;
+
+            string userAnswerString = Console.ReadLine();
+            int userAnswerInt = int.Parse(userAnswerString);
+
+            if (userAnswerInt == answer)
+                return true;
+            else
+                return false;
+        }
+
+        static bool Multiplication()
+        {
+            int left = rnd.Next(1, 9);
+            int right = rnd.Next(1, 9);
+
+            Console.WriteLine("{0} * {1}", left, right);
+            int answer = left * right;
+
+            string userAnswerString = Console.ReadLine();
+            int userAnswerInt = int.Parse(userAnswerString);
+
+            if (userAnswerInt == answer)
+                return true;
+            else
+                return false;
+        }
+
+        static bool Divide()
+        {
+            float left = rnd.Next(1, 9);
+            float right = rnd.Next(1, 9);
+
+            if (left < right)
+            {
+                right += left;
+                left -= right;
+                right -= left;
+            }
+            Console.WriteLine("{0} / {1}", left, right);
+            float answer = left / right;
+
+            string userAnswerString = Console.ReadLine();
+            float userAnswerInt = float.Parse(userAnswerString);
+
+            if (userAnswerInt == answer)
+                return true;
+            else
+                return false;
+        }
+
+        static bool Subtract()
+        {
+            int left = rnd.Next(1, 9);
+            int right = rnd.Next(1, 9);
+
+            if(left < right)
+            {
+
+            }
+            Console.WriteLine("{0} * {1}", left, right);
             int answer = left * right;
 
             string userAnswerString = Console.ReadLine();
